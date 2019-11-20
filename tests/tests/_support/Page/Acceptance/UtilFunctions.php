@@ -1,30 +1,31 @@
 <?php
+namespace Page\Acceptance;
 
 use \Facebook\WebDriver\WebDriver;
 use \Facebook\WebDriver\WebDriverElement;
-use \Facebook\WebDriver\WebDriverWait;
 use \Facebook\WebDriver\WebDriverExpectedCondition;
 use \Facebook\WebDriver\WebDriverBy;
 
-class UtilFunctions
+class UtilFunctions extends \Codeception\Module
 {
 
-    private function waitFor(AcceptanceTester $I, $element) {
+
+    private function waitFor(\AcceptanceTester $I, $element) {
         $I->waitForElement($element);
     }
 
-    public function buttonClick(AcceptanceTester $I, $buttonCss) {
-        $I->waitFor($buttonCss);
+    public function buttonClick(\AcceptanceTester $I, $buttonCss) {
+        $this->waitFor($I, $buttonCss);
         $I->click($buttonCss);
     }
 
-    public function fieldFilling(AcceptanceTester $I, $fieldCss, $fieldValue) {
+    public function fieldFilling(\AcceptanceTester $I, $fieldCss, $fieldValue) {
         $I->waitForElement($fieldCss);
         $I->fillField($fieldCss, $fieldValue);
     }
 
-    public function elementHover(WebDriver $wd, WebDriverElement $element) {
-        $wd->wait(30)->until(WebDriverExpectedCondition::presenceOfElementLocated(WebDriverBy::cssSelector($element)));
+    public function elementHover(WebDriver $wd, WebDriverElement $element, $elementCss) {
+        $wd->wait(30)->until(WebDriverExpectedCondition::presenceOfElementLocated(WebDriverBy::cssSelector($elementCss)));
         $wd->getMouse()->mouseMove($element->getCoordinates());
     }
 

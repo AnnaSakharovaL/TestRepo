@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use Page\Acceptance\VideoSearchingPage;
+
 $I = new AcceptanceTester($scenario);
 $I->wantTo('Find video and check the trailer');
 
