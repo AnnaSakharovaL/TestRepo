@@ -1,9 +1,7 @@
 <?php
 
 
-use phpDocumentor\Reflection\Types\String_;
-
-class VideoSearchingPage extends Utils
+class VideoSearchingPage extends UtilFunctions
 {
     protected $I;
     protected $wd;

@@ -1,13 +1,12 @@
 <?php
 
-
 use \Facebook\WebDriver\WebDriver;
 use \Facebook\WebDriver\WebDriverElement;
 use \Facebook\WebDriver\WebDriverWait;
 use \Facebook\WebDriver\WebDriverExpectedCondition;
 use \Facebook\WebDriver\WebDriverBy;
 
-class Utils
+class UtilFunctions
 {
 
     private function waitFor(AcceptanceTester $I, $element) {

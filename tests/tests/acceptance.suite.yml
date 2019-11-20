@@ -8,6 +8,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - \Helper\Acceptance
+        - \tests\tests\acceptance\PageObjects\UtilFunctions
+        - \PageObjects\VideoSearchingPage
         - Asserts
         - WebDriver:
               url: 'https://yandex.ru/video'
